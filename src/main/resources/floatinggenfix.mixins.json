@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ru.bortexel.floatinggenfix.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "server": [
+    "MineshaftGeneratorMixin",
+    "StructureStartMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
