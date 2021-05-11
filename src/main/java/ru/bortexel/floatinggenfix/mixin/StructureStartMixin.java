@@ -31,13 +31,7 @@ public class StructureStartMixin<C extends FeatureConfig> {
         BlockPos pos1 = new BlockPos(chunkPos.getStartX(), 48, chunkPos.getStartZ());
         BlockPos pos2 = new BlockPos(chunkPos.getEndX(), 48, chunkPos.getEndZ());
 
-        if (feature.getName().equals("stronghold")) {
-//            new StrongholdGenerator.PortalRoom(boundingBox, Direction.random(random))
-//                    .generate(world, structureAccessor, chunkGenerator, random, boundingBox, chunkPos, pos1.subtract(new Vec3i(0, 24, 0)));
-//            info.cancel();
-            return;
-        }
-
+        if (feature.getName().equals("stronghold")) return;
         if (isUnsuitable(world, pos1) || isUnsuitable(world, pos2)) info.cancel();
     }
 
