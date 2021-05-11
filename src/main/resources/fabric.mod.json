@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "floatinggenfix",
+  "version": "${version}",
+  "name": "FloatinGenerationFix",
+  "description": "Simple mod that fixes structure generation in floating islands worlds",
+  "authors": [
+    "RuscalWorld"
+  ],
+  "contact": {
+    "repo": "https://github.com/bortexel/floating-generation-fix"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.bortexel.floatinggenfix.Floatinggenfix"
+    ]
+  },
+  "mixins": [
+    "floatinggenfix.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
