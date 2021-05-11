@@ -4,6 +4,7 @@
   "package": "ru.bortexel.floatinggenfix.mixin",
   "compatibilityLevel": "JAVA_8",
   "server": [
+    "StrongholdFeatureMixin$Start",
     "MineshaftGeneratorMixin",
     "StructureStartMixin"
   ],
