@@ -42,7 +42,11 @@ public class StructureStartMixin<C extends FeatureConfig> {
      * @return true if structure should not be generated, false if can be generated
      */
     private boolean isUnsuitable(StructureWorldAccess world, BlockPos pos) {
-        BlockState blockState = world.getBlockState(pos);
-        return blockState.isAir();
+        for (int y = 48; y > 24; y--) {
+            BlockState blockState = world.getBlockState(new BlockPos(pos.getX(), y, pos.getZ()));
+            if (!blockState.isAir()) return false;
+        }
+
+        return true;
     }
 }
