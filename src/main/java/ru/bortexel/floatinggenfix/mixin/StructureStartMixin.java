@@ -43,7 +43,6 @@ public class StructureStartMixin<C extends FeatureConfig> {
      */
     private boolean isUnsuitable(StructureWorldAccess world, BlockPos pos) {
         BlockState blockState = world.getBlockState(pos);
-        Identifier id = Registry.BLOCK.getId(blockState.getBlock());
-        return id.getPath().equals("air");
+        return blockState.isAir();
     }
 }
