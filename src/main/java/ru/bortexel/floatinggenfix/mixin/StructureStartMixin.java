@@ -18,6 +18,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.bortexel.floatinggenfix.StrongholdGenerator;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 @Mixin(StructureStart.class)
@@ -31,7 +33,8 @@ public class StructureStartMixin<C extends FeatureConfig> {
         BlockPos pos1 = new BlockPos(chunkPos.getStartX(), 48, chunkPos.getStartZ());
         BlockPos pos2 = new BlockPos(chunkPos.getEndX(), 48, chunkPos.getEndZ());
 
-        if (feature.getName().equals("stronghold")) return;
+        List<String> whitelist = Arrays.asList("stronghold", "bastion_remnant", "fortress", "monument", "mansion", "desert_pyramid");
+        if (whitelist.contains(feature.getName())) return;
         if (isUnsuitable(world, pos1) || isUnsuitable(world, pos2)) info.cancel();
     }
 
