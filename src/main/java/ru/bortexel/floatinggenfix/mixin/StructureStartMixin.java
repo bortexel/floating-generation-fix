@@ -33,7 +33,7 @@ public class StructureStartMixin<C extends FeatureConfig> {
         BlockPos pos1 = new BlockPos(chunkPos.getStartX(), 48, chunkPos.getStartZ());
         BlockPos pos2 = new BlockPos(chunkPos.getEndX(), 48, chunkPos.getEndZ());
 
-        List<String> whitelist = Arrays.asList("stronghold", "bastion_remnant", "fortress", "monument", "mansion", "desert_pyramid");
+        List<String> whitelist = Arrays.asList("stronghold", "bastion_remnant", "fortress", "monument", "mansion", "desert_pyramid", "endcity");
         if (whitelist.contains(feature.getName())) return;
         if (isUnsuitable(world, pos1) || isUnsuitable(world, pos2)) info.cancel();
     }
